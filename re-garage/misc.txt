@@ -1,0 +1,32 @@
+-- Create the database
+CREATE DATABASE IF NOT EXISTS re_projects;
+
+-- Use the database
+USE re_projects;
+
+-- Create the 'main_info' table
+CREATE TABLE IF NOT EXISTS main_info (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255),
+    title VARCHAR(255),
+    footer_urls JSON
+);
+
+-- Create the 'projects' table
+CREATE TABLE IF NOT EXISTS projects (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    image_url VARCHAR(255),
+    title VARCHAR(255),
+    description TEXT,
+    progress INT,
+    amount_collected INT,
+    amount_total INT
+);
+
+-- Create the 'secret' table
+CREATE TABLE IF NOT EXISTS secret (
+    password_hash VARCHAR(32)
+);
+
+-- Insert a default password into the 'secret' table (you can change this later)
+INSERT INTO secret (password_hash) VALUES (MD5('admin'));

@@ -1,0 +1,122 @@
+//* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply styles to the header, banner, and footer */
+header {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    height: 10vh; /* Set the banner height to 10% of the viewport height */
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%; /* Ensure the banner takes full height of the header */
+}
+
+.banner img {
+    max-height: 100%; /* Set maximum height to fill the banner */
+    max-width: 100%; /* Set maximum width to fill the banner */
+    object-fit: contain; /* Maintain aspect ratio and fit the image within the container */
+}
+
+.banner h1 {
+    font-size: 24px;
+    margin: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.main-content {
+    height: 80vh; /* Set the main content height to 70% of the viewport height */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the container height */
+}
+
+footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    height: 10vh; /* Set the footer height to 10% of the viewport height */
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projects-section {
+    margin-top: 20px;
+    max-height: 60vh; /* Set maximum height for the projects section */
+    overflow-y: auto; /* Add vertical scroll within the projects section */
+}
+
+.project-card {
+    display: flex;
+    flex-wrap: wrap; /* Allow project cards to wrap to the next row on smaller screens */
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 10px;
+    align-items: center;
+}
+
+.project-card img {
+    max-width: 100%;
+    margin-bottom: 10px; /* Add some space between the image and content on smaller screens */
+}
+
+.project-card .project-details {
+    flex-grow: 1;
+    margin-left: 10px; /* Add some space between the image and content on smaller screens */
+    max-height: 80%; /* Set the maximum height to 80% of the parent container's height */
+    overflow-y: auto; /* Add vertical scroll if content exceeds the container height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    padding-right: 10px; /* Add a bit of right padding for a cleaner look */
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.project-card .description {
+    margin-top: 10px;
+}
+
+.project-card .progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 10px;
+    position: relative; /* Add relative positioning for the progress bar */
+}
+
+.project-card .progress {
+    width: <?php echo $row_project["progress"]; ?>%; /* Fill with blue based on progress */
+    height: 100%;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    line-height: 20px;
+    transition: width 0.5s ease-in-out;
+}
+
+.project-card .progress-text {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+    z-index: 2; /* Ensure the text is above the progress bar */
+}
